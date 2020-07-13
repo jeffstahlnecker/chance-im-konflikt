@@ -6,7 +6,13 @@
 
 module.exports = {
   /* Your site config here */
+ siteMetadata: {
+   title: 'Chance im Konflikt',
+   description: 'Chance im Konflikt',
+   author: 'Berlin Mediatoren',
+ }, 
   plugins: [
+
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     {
