@@ -6,11 +6,14 @@
 
 module.exports = {
   /* Your site config here */
- siteMetadata: {
-   title: 'Chance im Konflikt',
-   description: 'Chance im Konflikt',
-   author: 'Berlin Mediatoren',
- }, 
+  siteMetadata: {
+    title: "Chance im Konflikt",
+    description: "Chance im Konflikt",
+    author: "Chande im Konflikt",
+    twitterUsername: "@jeffstahlnecker",
+    image: "/defaultImg.jpeg",
+    siteUrl: process.env.SITE_URL,
+  },
   plugins: [
 
     `gatsby-plugin-react-helmet`,
