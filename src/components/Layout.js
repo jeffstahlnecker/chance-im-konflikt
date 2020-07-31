@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import 'assets/stylesheets/application.scss';
-
 import ClassName from 'models/classname';
 import { usePageMeta } from 'hooks';
 
@@ -28,7 +26,7 @@ const Layout = ({ children, pageName, className }) => {
   return (
     <>
       <Helmet {...helmetSettings} />
-      <div className='wrapper'>
+      <div>
         <Header />
         <main>{children}</main>
         <Footer />

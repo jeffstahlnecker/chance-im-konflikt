@@ -10,6 +10,7 @@ module.exports = {
     'gatsby-plugin-resolve-src',
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
