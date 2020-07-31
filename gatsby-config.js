@@ -11,16 +11,16 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
-    `gatsby-transformer-sharp`, 
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-     {
+    {
       resolve: `gatsby-plugin-webfonts`,
       options: {
         fonts: {
           google: [
             {
-              family: "Roboto",
-              variants: ["300", "400", "500"],
+              family: 'Roboto',
+              variants: ['300', '400', '500'],
               //subsets: ['latin']
               //text: 'Hello'
               //fontDisplay: 'swap',
