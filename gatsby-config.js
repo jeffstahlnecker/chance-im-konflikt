@@ -1,48 +1,35 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
 module.exports = {
-  /* Your site config here */
   siteMetadata: {
-    title: "Chance im Konflikt",
-    description: "Chance im Konflikt",
-    author: "Chande im Konflikt",
-    twitterUsername: "@jeffstahlnecker",
-    image: "/defaultImg.jpeg",
-    siteUrl: process.env.SITE_URL,
+    description: `A Gatsby starter with Sass and no assumptions`,
+    lang: 'en',
+    siteType: 'website', // https://ogp.me/#types
+    siteUrl: 'https://gatsby-starter-zurg.netlify.com/',
+    title: 'Zurgbot Gatsby Starter',
   },
   plugins: [
-
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
+    'gatsby-plugin-resolve-src',
+    'gatsby-plugin-sass',
+    'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images/`,
+        name: 'images',
+        path: `${__dirname}/src/assets/images`,
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        fonts: [
-          {
-            family: `Roboto`,
-            variants: [`300`, `400`, `500`, `600`, `700`],
-          },
-        ],
+        name: 'Zurgbot Gatsby Starter',
+        short_name: 'Zurgbot Gatsby Starter',
+        start_url: '/',
+        background_color: '#663399',
+        theme_color: '#a2466c',
+        display: 'standalone',
+        icon: 'src/assets/images/zurg-icon.svg',
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-styled-components`,
+    'gatsby-plugin-offline',
+    'gatsby-plugin-sitemap',
   ],
-}
+};

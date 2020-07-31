@@ -1,113 +1,88 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's hello-world++ starter
-</h1>
+# Zurgbot Gatsby Starter
 
-Kick off your project with this hello-world boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+### Here's What You Get
+* [Gatsby](https://www.gatsbyjs.org/)
+* [Sass](https://sass-lang.com/) (SCSS Flavored) CSS, Buzz Lightyear Style
+* [Bulma](https://bulma.io) CSS Framework
+* [React Helmet](https://github.com/nfl/react-helmet) `<head>` Management
+* [React Icons](https://react-icons.github.io/react-icons/) SVG Icon Components (Including [Font Awesome](https://fontawesome.com) and others)
+* [Eslint](https://eslint.org/) for JS linting
+* [Prettier](https://prettier.io/) for JS formatting
+* [StyleLint](https://stylelint.io) for Scss linting and formatting
+* [Jest](https://jestjs.io) for a test framework
+* [Enzyme](https://airbnb.io/enzyme/) for testing with React
+* [Husky](https://github.com/typicode/husky) for git hooks, particularlly precommit management
+* [Lint Staged](https://github.com/okonet/lint-staged) to run commands only on staged files
+* [Bump](https://github.com/fabiospampinato/bump) for version management
 
-This updated hello-world starter includes plugins that I use continually, with some modifications to have jest testing enabled out of the box.
+## Getting Started
 
-This starter includes:
+### Requirements
+* [Gatsby CLI](https://www.npmjs.com/package/gatsby-cli)
+* [Yarn](https://yarnpkg.com/en/)
 
-- Gatsby React Helmet
-- Gatsby Plugin Sitemap
-- Gatsby Source Filesystem
-- Gatsby Prefetch Google Fonts
-- Gatsby Transformer sharp
-- Gatsby SaSS
-- Gatsby Styled Components
+### Quick Start
+Run the following in your favorite terminal:
+```
+gatsby new [directory] https://github.com/colbyfayock/gatsby-starter-zurg
+```
 
-As well as the modifications for Jest testing outlined in [Gatsby Unit Testing](https://www.gatsbyjs.org/docs/unit-testing/).
+### Starting from Scratch
+* Set up Yarn: https://yarnpkg.com/lang/en/docs/install/
+* Install the Gatsby CLI globally:
+```
+yarn global add gatsby-cli
+```
+* Inside the directory of your choice, scaffold a new Gatsby site:
+```
+gatsby new [directory] https://github.com/colbyfayock/gatsby-starter-zurg
+```
+For example, if I want my installation in `~/Code/new-gatsby-site`, I would navigate to `~/Code` and run:
+```
+gatsby new new-gatsby-site https://github.com/colbyfayock/gatsby-starter-zurg
+```
+* Navigate to your new directory and run:
+```
+yarn develop
+```
+* You should now be running a new Gatsby site locally! 🎉
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+## More Details
 
-## 🚀 Quick start
+### Why Did I Include X Package?
 
-1.  **Create a Gatsby site.**
+#### Sass
+CSS-in-JS is all the rage right now, but stylesheets have a lot of advantages unless you're building an application the size of Facebook (exaggeration). When using stylesheets, Sass provides a lot of power to make working with it dynamic with well thought out ways of managing imports to focus style development.
 
-    Use the Gatsby CLI to create a new site, specifying the hello-world starter.
+#### Bulma
+Bulma has a lot of good things going for it, like it's developer friendly nature and it's customization options. I particularly like it's use of flexbox for columns (though others have similar qualities).
 
-    ```shell
-    # create a new Gatsby site using the hello-world starter
-    gatsby new my-hello-world-starter https://github.com/gatsbyjs/gatsby-starter-hello-world
-    ```
+#### React Helmet
+Working with the `<head>` is hard, and Helmet makes this easy.
 
-1.  **Start developing.**
+#### React Icons
+This package makes working with icons fun again, with little hassle, a wide variety of icons, and importantly, it renders the components as an SVG node which is great for an app. Bonus: it includes Font Awesome, which has a lot of great icons.
 
-    Navigate into your new site’s directory and start it up.
+#### Eslint
+Eslint is a great framework for JS linting and is the backbone of most linting applications.
 
-    ```shell
-    cd my-hello-world-starter/
-    gatsby develop
-    ```
+#### Prettier
+Prettier does a bit better of a job managing formatting, so it's set up to run on top of the Eslint config rather than maintaining 2.
 
-1.  **Open the source code and start editing!**
+#### StyleLint
+StyleLint gives us the ability to provide similar linting and formatting that we would get with Eslint and Prettier for our Scss.
 
-    Your site is now running at `http://localhost:8000`!
+#### Jest
+Jest is pretty easy to set up and use. It's also pretty fast which is a nice bonus.
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+#### Enzyme
+Enzyme makes testing React components simpler with it's APIs around rendering out the components.
 
-    Open the `my-hello-world-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+#### Husky
+Husky provides a good easily manageable way to set up git hooks. Particularly here, we run linting before a commit is able to be complete.
 
-## 🧐 What's inside?
+#### Lint Staged
+Rather than run linting on every single file every single commit, we can use lint staged to only run on the files that are... well... staged on git.
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
-
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
-
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
-
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-hello-world)
-
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/gatsbyjs/gatsby-starter-hello-world)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+### Bump
+Bump provides a nice simple interface for working with versioning your app. Running `bump` along with the desired options gives you automation for git tagging, changelogs, npm package version increment, and more.
