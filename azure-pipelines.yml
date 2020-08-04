@@ -17,5 +17,6 @@ steps:
 
 - script: |
     npm install
-    npm run build
+    npm install gatsby-cli
+    gatsby build
   displayName: 'npm install and build'
