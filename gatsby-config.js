@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     description: `A Gatsby starter with Sass and no assumptions`,
@@ -6,6 +10,7 @@ module.exports = {
     siteUrl: 'https://gatsby-starter-zurg.netlify.com/',
     title: 'Zurgbot Gatsby Starter',
   },
+
   plugins: [
     'gatsby-plugin-resolve-src',
     'gatsby-plugin-sass',
@@ -13,6 +18,13 @@ module.exports = {
     'gatsby-plugin-styled-components',
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
     {
       resolve: `gatsby-plugin-webfonts`,
       options: {
