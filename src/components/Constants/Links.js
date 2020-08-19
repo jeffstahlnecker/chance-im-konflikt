@@ -1,22 +1,14 @@
 export default [
   {
-    path: 'https://www.mxc.org/',
+    path: '/',
     text: 'Home',
   },
   {
-    path: 'https://www.mxc.org/mxc-token',
-    text: 'Token',
+    path: '/mediatoren',
+    text: 'Mediatoren',
   },
   {
-    path: 'https://www.mxc.org/mxc-supernode',
-    text: 'Supernode',
-  },
-  {
-    path: '/',
-    text: 'Blog',
-  },
-  {
-    path: 'https://www.mxc.org/about',
-    text: 'About',
+    path: '/uber',
+    text: 'Über',
   },
 ];

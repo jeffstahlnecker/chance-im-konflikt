@@ -1,24 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import { setRem } from './Styles';
+import { setRem, setColor, media, setFont } from './Styles';
+import { FaBars } from 'react-icons/fa';
+import styles from './Header.module.css';
+import links from './Constants/Links';
 
 const Header = () => {
+  const [isOpen, setNav] = useState(false);
+  const toggleNav = () => {
+    setNav((isOpen) => !isOpen);
+  };
   return (
     <header>
       <Grid>
-        <Logo>This is the Logo</Logo>
-        <Navbar>
-          <NavItem>
-            <Link to='/'>Home</Link>
-          </NavItem>
-          <NavItem>
-            <Link to='/'>About</Link>
-          </NavItem>
-          <NavItem>
-            <Link to='/'>Mediators</Link>
-          </NavItem>
-        </Navbar>
+        <Logo>
+          <div>Chance im Konflikt</div>
+          <MobileMenu type='button' onClick={toggleNav}>
+            <FaBars />
+          </MobileMenu>
+        </Logo>
+        <StyledMenu className={isOpen ? `${styles.show}` : `${styles.hide}`}>
+          {links.map((item, index) => {
+            return (
+              <MenuItem key={index}>
+                <Link to={item.path}>{item.text}</Link>
+              </MenuItem>
+            );
+          })}
+        </StyledMenu>
       </Grid>
     </header>
   );
@@ -26,22 +36,65 @@ const Header = () => {
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 2fr 6fr;
+  color: ${setColor.mainBlack};
+  background-color: ${setColor.mainWhite};
+  padding: 1vh 1vw;
+  ${media.tablet`  display: grid;
+  grid-template-columns: 4fr 2fr;
+  
+  `}
 `;
 
-const Logo = styled.div``;
-
-const Navbar = styled.div`
+const Logo = styled.span`
   display: flex;
-  flex-direction: row;
+  ${setFont.logo};
   align-items: center;
-  justify-content: center;
-  align-content: center;
-  position: fixed;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+  flex-wrap: no-wrap;
 `;
 
-const NavItem = styled.div`
-  padding: ${setRem(5)} ${setRem(10)};
+const MobileMenu = styled.button`
+  color: ${setColor.mainBlack};
+  background-color: transparent;
+  margin-top: 1rem;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  order: 99;
+  cursor: pointer;
+  align-self: first baseline;
+  position: fixed;
+  ${media.tablet`display:none;`};
+`;
+
+const StyledMenu = styled.ul`
+  display: flex;
+  list-style: none;
+  margin: 3rem 0 0 0;
+  align-items: center;
+  padding: 0;
+  justify-content: flex-start;
+  flex: 4;
+  font-weight: 500;
+  flex-direction: column;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s linear;
+  ${media.tablet`
+	flex-direction:row;
+	height: auto;
+	margin: 0 0 0 0;
+	`};
+`;
+
+const MenuItem = styled.li`
+  padding: 1rem 2rem;
+  a {
+    text-decoration: none;
+  }
 `;
 
 export default Header;
