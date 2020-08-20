@@ -34,6 +34,8 @@ const Header = () => {
   );
 };
 
+
+
 const Grid = styled.div`
   display: grid;
   color: ${setColor.mainBlack};

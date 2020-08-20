@@ -9,6 +9,6 @@ export default [
   },
   {
     path: '/uber',
-    text: 'Über',
+    text: 'Über Uns',
   },
 ];
