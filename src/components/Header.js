@@ -19,10 +19,10 @@ const Header = () => {
       <Grid>
         <Logo>
           <Image fixed={logo.file.childImageSharp.fixed}/>
+          <MobileMenu type='button' onClick={toggleNav}>
+            <FaBars />
+          </MobileMenu>
         </Logo>
-        <MobileMenu type='button' onClick={toggleNav}>
-          <FaBars />
-        </MobileMenu>
         <StyledMenu className={isOpen ? `${styles.show}` : `${styles.hide}`}>
           {links.map((item, index) => {
             return (
@@ -50,7 +50,6 @@ const getLogo = graphql`
 `;
 
 const Grid = styled.div`
-  display: grid;
   color: ${setColor.mainBlack};
   background-color: ${setColor.mainWhite};
   padding: 1vh 1vw;
@@ -60,7 +59,7 @@ const Grid = styled.div`
   `}
 `;
 
-const Logo = styled.span`
+const Logo = styled.div`
   display: flex;
   ${setFont.logo};
   align-items: center;
@@ -68,20 +67,17 @@ const Logo = styled.span`
   flex-direction: row;
   padding: 0;
   margin: 0;
-  flex-wrap: no-wrap;
 `;
 
 const MobileMenu = styled.button`
   color: ${setColor.mainBlack};
   background-color: transparent;
-  margin-top: 1rem;
   border: none;
   outline: none;
   font-size: 1.5rem;
   order: 99;
   cursor: pointer;
   align-self: first baseline;
-  position: fixed;
   ${media.tablet`display:none;`};
 `;
 
