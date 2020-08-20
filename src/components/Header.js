@@ -1,25 +1,28 @@
 import React, { useState } from 'react';
+import Image from 'gatsby-image';
 import styled from 'styled-components';
-import { Link, graphql } from 'gatsby';
-import { setRem, setColor, media, setFont } from './Styles';
+import { Link, graphql, useStaticQuery } from 'gatsby';
+import {setColor, media, setFont, setTransition } from './Styles';
 import { FaBars } from 'react-icons/fa';
 import styles from './Header.module.css';
 import links from './Constants/Links';
+
 
 const Header = () => {
   const [isOpen, setNav] = useState(false);
   const toggleNav = () => {
     setNav((isOpen) => !isOpen);
   };
+  const logo = useStaticQuery(getLogo);
   return (
     <header>
       <Grid>
         <Logo>
-          <div>Chance im Konflikt</div>
-          <MobileMenu type='button' onClick={toggleNav}>
-            <FaBars />
-          </MobileMenu>
+          <Image fixed={logo.file.childImageSharp.fixed}/>
         </Logo>
+        <MobileMenu type='button' onClick={toggleNav}>
+          <FaBars />
+        </MobileMenu>
         <StyledMenu className={isOpen ? `${styles.show}` : `${styles.hide}`}>
           {links.map((item, index) => {
             return (
@@ -34,7 +37,17 @@ const Header = () => {
   );
 };
 
-
+const getLogo = graphql`
+  query {
+    file(relativePath: {eq: "logo.png"}) {
+      childImageSharp {
+        fixed (width:175){
+          ...GatsbyImageSharpFixed_withWebp_tracedSVG
+        }
+      }
+    }
+  }
+`;
 
 const Grid = styled.div`
   display: grid;
@@ -94,8 +107,14 @@ const StyledMenu = styled.ul`
 
 const MenuItem = styled.li`
   padding: 1rem 2rem;
+  
   a {
     text-decoration: none;
+    color: ${setColor.mainBlack};
+  }
+  a:hover {
+    color: ${setColor.secondaryColor};
+    ${setTransition()}
   }
 `;
 
