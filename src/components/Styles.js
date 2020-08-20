@@ -14,7 +14,7 @@ export const setColor = {
 
 export const setFont = {
   main: "font-family: 'Roboto', sans-serif;",
-  logo: "font-family: 'Acme', sans-serif;",
+  logo: "font-family: 'Advent Pro', sans-serif;",
 };
 
 export const setFlex = ({ x = 'center', y = 'center' } = {}) => {

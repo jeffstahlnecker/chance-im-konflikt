@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import { setRem, setColor, media, setFont } from './Styles';
 import { FaBars } from 'react-icons/fa';
 import styles from './Header.module.css';

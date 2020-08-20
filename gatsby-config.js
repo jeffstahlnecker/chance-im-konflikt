@@ -39,8 +39,8 @@ module.exports = {
               //strategy: 'selfHosted' // 'base64' || 'cdn'
             },
             {
-              family: 'Acme',
-              variants: ['300', '400', '500'],
+              family: 'Advent Pro',
+              variants: ['100', '200', '300','400', '500', '600','70Jeff'],
               //subsets: ['latin']
               //text: 'Hello'
               //fontDisplay: 'swap',
