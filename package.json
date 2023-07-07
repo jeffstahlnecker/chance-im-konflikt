@@ -51,7 +51,7 @@
     "prettier": "^2.0.4",
     "prettier-eslint": "^9.0.1",
     "prettier-eslint-cli": "^5.0.0",
-    "stylelint": "^13.3.0",
+    "stylelint": "^15.10.1",
     "stylelint-scss": "^3.16.0"
   },
   "keywords": [
